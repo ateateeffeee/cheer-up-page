@@ -1,30 +1,37 @@
 import React, { useState } from 'react';
-import './index.scss';  // SCSS file for styling
+import './index.scss'; // Make sure this is imported
 
-const HamburgerMenu = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const HamburgerMenu: React.FC = () => {
+    const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
 
-  console.log('is it open ', isOpen);
+    // Function to close the menu and handle scrolling
+    const handleLinkClick = (target: string) => {
+        setIsOpen(false);  // Close the menu
 
-  return (
-    <nav className="navbar">
-      <div className="hamburger" onClick={toggleMenu}>
-        <div className={isOpen ? "bar bar-1 open" : "bar bar-1"}></div>
-        <div className={isOpen ? "bar bar-2 open" : "bar bar-2"}></div>
-        <div className={isOpen ? "bar bar-3 open" : "bar bar-3"}></div>
-      </div>
-      <ul className={isOpen ? "menu open" : "menu"}>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  );
+        if (target === 'home') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });  // Scroll to the top smoothly
+        }
+    };
+
+    return (
+        <nav className="hamburger-menu">
+            <div className="hamburger" onClick={toggleMenu}>
+                <div className={isOpen ? "bar bar-1 open" : "bar bar-1"}></div>
+                <div className={isOpen ? "bar bar-2 open" : "bar bar-2"}></div>
+                <div className={isOpen ? "bar bar-3 open" : "bar bar-3"}></div>
+            </div>
+            <ul className={isOpen ? "menu open" : "menu"}>
+                <li><a href="#home" onClick={() => handleLinkClick('home')}>Home</a></li>
+                <li><a href="#about" onClick={() => handleLinkClick('about')}>About</a></li>
+                <li><a href="#services" onClick={() => handleLinkClick('services')}>Services</a></li>
+                <li><a href="#contact" onClick={() => handleLinkClick('contact')}>Contact</a></li>
+            </ul>
+        </nav>
+    );
 };
 
 export default HamburgerMenu;

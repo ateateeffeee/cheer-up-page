@@ -1,0 +1,36 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+
+  .page-content {
+    padding: 1em;
+    position: relative;
+    margin-bottom: 2em;
+}
+
+
+.hamburger-menu {
+    position: fixed;   // Fix the menu at the top of the page
+    top: 0;            // Align it to the top
+    left: 0;           // Align it to the left
+    width: 100%;       // Make sure it spans the full width of the page
+    z-index: 1000;     // Ensure it's on top of other content
+    background-color: #fff; // Add background color if necessary
+}
+
+
+  

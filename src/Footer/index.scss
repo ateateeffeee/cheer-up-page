@@ -1,0 +1,66 @@
+// footer {
+//     background-color: #000; // Optional: add any footer background color you like
+//     padding: 10px;
+  
+//     .spotify-player {
+//       display: none; // Hide by default
+  
+//       @media (max-width: 768px) {
+//         display: block; // Show only on mobile screens
+//         position: fixed;
+//         bottom: 0;
+//         width: 100%;
+//         z-index: 10;
+//       }
+//     }
+//   }
+
+//   footer {
+//     margin: 0;
+//     padding: 0;
+//     height: auto;
+//   }
+  
+//   .spotify-player {
+//     margin: 0;
+//     padding: 0;
+//     height: auto;
+//   }
+
+
+  footer {
+    background-color: #222;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .music-player-container {
+        max-width: 100%;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .play-button {
+        background-color: #1db954;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+
+        &:hover {
+            background-color: #1ed760;
+        }
+    }
+
+    audio {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
+  
