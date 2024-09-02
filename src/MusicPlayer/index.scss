@@ -1,70 +1,97 @@
 .music-player {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #333;
-    padding: 20px;
-    border-radius: 12px;
-    color: white;
 
-    .song-info {
-        text-align: center;
-        margin-bottom: 10px;
+    outline: solid white .2em;
+    padding: 10px;
+    border-radius: 5px;
+    // max-width: 20em;
 
-        h4 {
-            margin: 0;
-            font-size: 18px;
-        }
-
-        p {
-            font-size: 14px;
-            margin: 0;
-            opacity: 0.8;
-        }
-    }
-
-    .progress-bar {
-        width: 100%;
-        margin: 10px 0;
-        appearance: none;
-        height: 5px;
-        background-color: #555;
-        outline: none;
-        border-radius: 5px;
-
-        &::-webkit-slider-thumb {
-            appearance: none;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background-color: #1db954;
-            cursor: pointer;
-        }
-
-        &::-moz-range-thumb {
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background-color: #1db954;
-            cursor: pointer;
-        }
-    }
-
-    .play-button {
-        background-color: #1db954;
+    .controls {
+      display: flex;
+      justify-content: space-around;
+      margin: 10px 0;
+      margin-left: .9em;
+      margin-top: 1em;
+  
+      button {
+        padding: 10px;
+        background-color: black;
+        margin-right: 1em;
+        outline: solid .2em;
+        outline-color: white;
         color: white;
         border: none;
-        border-radius: 20px;
-        padding: 10px 20px;
+        border-radius: 5px;
         cursor: pointer;
-        font-size: 16px;
-
+  
         &:hover {
-            background-color: #1ed760;
+          background-color: #0056b3;
         }
+      }
+    }
+  
+    .progress-bar {
+      margin: 10px 0;
+  
+      input[type='range'] {
+        width: 100%;
+      }
+    }
+  
+    .song-info {
+        display: flex;
+        align-items: center; /* Vertically centers the content */
+      font-size: 1.2em;
+      margin: 10px 0;
+      margin-left: .2em;
+      cursor: pointer;
+      color: white;
+
+      .more-info-collapser{
+        margin-top: .5em;
+        margin-left: auto;
+        transition: transform 0.3s ease;
+        transform-origin: 50% 50%;
+
+        &.expanded {
+            transform: rotate(180deg);
+            margin-top: .1em;
+        }
+      }
+    }
+  
+    .expanded-info {
+      margin-top: 20px;
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        margin-bottom: 10px;
+        margin-left: 2.5em;
+        
+      }
+  
+      ul {
+        list-style: none;
+        padding: 0;
+  
+        li {
+          cursor: pointer;
+          margin: 5px 0;
+          color: white;
+  
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
     }
 
-    audio {
-        display: none;
-    }
-}
+    .selected-song {
+        outline: solid white 0.2em;
+        border-radius: 5px;
+        padding: 5px;
+        // background-color: rgba(255, 255, 255, 0.1); /* Optional: add a subtle background for the selected song */
+      }
+      
+  }
+  
